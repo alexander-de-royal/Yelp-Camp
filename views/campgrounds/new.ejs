@@ -10,14 +10,17 @@
 <body>
 <form action="/campgrounds" method="POST">
     <div>
-        <label for="">Title</label>
-            <input type="text" id="title" name="campgrounds[title]">
+        <label for="">Title
+            <input type="text" id="title" name="campground[title]">
+        </label>
     </div>
     <div>
-        <label for="">Location</label>
-        <input type="text" id="location" name="campgrounds[location]">
+        <label for="">Location
+        <input type="text" id="location" name="campground[location]">
+        </label>
     </div>
     <button>Add Campground</button>
 </form>
+<a href="/campgrounds">All Campgrounds</a>
 </body>
 </html>
