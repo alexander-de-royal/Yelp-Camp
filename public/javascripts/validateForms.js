@@ -1,6 +1,9 @@
+import bsCustomFileInput from "bs-custom-file-input";
 
 (function () {
     'use strict'
+
+    bsCustomFileInput.init()
 
     const forms = document.querySelectorAll('.validated-form')
 
