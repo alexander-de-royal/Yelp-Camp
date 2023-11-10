@@ -1,14 +1,23 @@
 const mongoose = require('mongoose');
 const Review = require('./review')
 const Schema = mongoose.Schema;
-const {campgroundSchema} = require("../schemas");
+
+const ImageSchema = new Schema ({
+    url: String,
+    filename: String
+});
+
+ImageSchema.virtual('thumbnail').get(function (){
+    return this.url.replace('/upload', '/upload/w_200');
+});
 
 const CampgroundSchema = new Schema ({
     title: String,
-    image: [{
-        url: String,
-        filename: String
-    }],
+    image: [ImageSchema],
+    geometry: {
+        "type": "Point",
+        "coordinates":[-90.73333,14.56667]
+    },
     price: Number,
     description: String,
     location: String,
@@ -23,6 +32,8 @@ const CampgroundSchema = new Schema ({
     }
     ]
 });
+
+
 
 CampgroundSchema.post('findOneAndDelete', async function (doc) {
     if(doc){
