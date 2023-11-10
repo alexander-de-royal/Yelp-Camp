@@ -32,9 +32,9 @@ const seedDB = async () => {
             author: '6543195c530e58412da01386',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            // image: 'https://source.unsplash.com/collection/483251',
             description: 'Something goes here',
             price,
+            geometry: {"type": "Point", "coordinates": [-113.1331, 47.0202]},
             images: [
                 {
                     url: 'https://res.cloudinary.com/douqbebwk/image/upload/v',
